@@ -42,3 +42,6 @@ next-env.d.ts
 
 # ภาพตัวอย่างอ้างอิง (ไม่ขึ้นเว็บ)
 /media_*.webp
+
+.vercel
+.env*
