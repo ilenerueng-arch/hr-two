@@ -16,7 +16,7 @@ const myanmar = Noto_Sans_Myanmar({
 
 const title = "HR WTO — ระบบ HR ใช้ง่าย 2 ภาษา ไทย-พม่า";
 const description =
-  "เว็บ HR สำหรับพนักงานและ HR admin ใช้ง่ายแม้ไม่คุ้นเทคโนโลยี เลือกได้ทั้งภาษาไทยและภาษาพม่า ภาพสวย ดูเข้าใจทันที";
+  "เว็บ HR ภายในองค์กร สำหรับพนักงานและ HR admin ใช้ง่ายแม้ไม่คุ้นมือถือ เลือกได้ทั้งภาษาไทยและภาษาพม่า";
 
 export const metadata: Metadata = {
   title,

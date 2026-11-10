@@ -1,7 +1,7 @@
-// ===== ข้อมูลร้าน — แก้ตรงนี้ได้เลย =====
-const LINE_ID = "@hrwto"; // ตัวอย่าง: เปลี่ยนเป็น LINE ID จริง
+// ===== ข้อมูลติดต่อ HR — แก้ตรงนี้ได้เลย =====
+const LINE_ID = "@hrwto"; // ตัวอย่าง: เปลี่ยนเป็น LINE OA ของ HR จริง
 const LINE_URL = `https://line.me/R/ti/p/${LINE_ID}`;
-const OPEN_HOURS = "จันทร์–ศุกร์ 09:00–18:00 น."; // ตัวอย่าง
+const OPEN_HOURS = "จันทร์–ศุกร์ 08:30–17:30 น."; // ตัวอย่าง
 
 const features = [
   {
@@ -12,7 +12,7 @@ const features = [
   {
     icon: "lang",
     title: "2 ภาษา ไทย–พม่า",
-    text: "สลับภาษาได้ในปุ่มเดียว พนักงานชาวเมียนมาอ่านเข้าใจทันที ลดการสื่อสารผิดพลาด ลดงานอธิบายของ HR",
+    text: "สลับภาษาได้ในปุ่มเดียว เพื่อนพนักงานชาวเมียนมาอ่านเข้าใจทันที ลดการสื่อสารผิดพลาด ลดงานอธิบายของ HR",
   },
   {
     icon: "pic",
@@ -42,22 +42,28 @@ const services = [
   },
 ];
 
+const steps = [
+  { n: "1", title: "เปิดเว็บในมือถือ", text: "ใช้ได้ทั้ง Android และ iPhone ไม่ต้องติดตั้งแอป" },
+  { n: "2", title: "เลือกภาษา", text: "กดปุ่ม ไทย หรือ မြန်မာ ที่มุมบนของหน้าจอ" },
+  { n: "3", title: "กดเมนูที่ต้องการ", text: "ขอลา ดูเงินเดือน ดูกะงาน หรืออ่านประกาศ" },
+];
+
 const faqs = [
   {
-    q: "พนักงานไม่เก่งเทคโนโลยี จะใช้ได้ไหม?",
-    a: "ได้ค่ะ หน้าจอออกแบบให้ใช้ภาพและปุ่มใหญ่เป็นหลัก ส่วนใหญ่ลองกดครั้งเดียวก็ใช้เป็น และเรามีคู่มือแบบรูปภาพให้ด้วย",
+    q: "ไม่เก่งมือถือ จะใช้ได้ไหม?",
+    a: "ได้ หน้าจอใช้ภาพและปุ่มใหญ่เป็นหลัก ลองกดครั้งเดียวก็ใช้เป็น ถ้ายังไม่แน่ใจ ถามหัวหน้างานหรือ HR ได้เลย",
   },
   {
     q: "ต้องติดตั้งแอปไหม?",
-    a: "ไม่ต้องค่ะ เปิดผ่านเบราว์เซอร์ในมือถือได้เลย ใช้ได้ทั้ง Android และ iPhone",
+    a: "ไม่ต้อง เปิดผ่านเบราว์เซอร์ในมือถือได้เลย",
   },
   {
     q: "เปลี่ยนภาษาไทย–พม่ายังไง?",
-    a: "กดปุ่มธงภาษาที่มุมบนของหน้าจอ ระบบจะจำภาษาที่เลือกไว้ให้ครั้งต่อไป",
+    a: "กดปุ่มภาษาที่มุมบนของหน้าจอ ระบบจะจำภาษาที่เลือกไว้ให้ครั้งต่อไป",
   },
   {
-    q: "ราคาเท่าไร?",
-    a: "ขึ้นอยู่กับจำนวนพนักงานและฟังก์ชันที่ต้องการ ทักไลน์มาคุยกันได้เลย เราจะแนะนำแพ็กเกจที่คุ้มที่สุดให้",
+    q: "ลืมรหัสผ่าน หรือเข้าระบบไม่ได้ ทำยังไง?",
+    a: "ทักไลน์ HR ในส่วน “สอบถาม HR” ด้านล่าง เจ้าหน้าที่จะช่วยตั้งรหัสใหม่ให้",
   },
 ];
 
@@ -132,7 +138,7 @@ function LineButton({ big = false }: { big?: boolean }) {
       }`}
     >
       <LineIcon />
-      ทักไลน์เลย
+      ทักไลน์ HR
     </a>
   );
 }
@@ -206,9 +212,10 @@ export default function Home() {
         </a>
         <nav className="hidden gap-6 text-body text-ink-soft md:flex">
           <a href="#features" className="hover:text-green-700">จุดเด่น</a>
-          <a href="#services" className="hover:text-green-700">บริการ</a>
+          <a href="#services" className="hover:text-green-700">ทำอะไรได้บ้าง</a>
+          <a href="#how" className="hover:text-green-700">วิธีใช้</a>
           <a href="#faq" className="hover:text-green-700">คำถามที่พบบ่อย</a>
-          <a href="#contact" className="hover:text-green-700">ติดต่อเรา</a>
+          <a href="#contact" className="hover:text-green-700">สอบถาม HR</a>
         </nav>
       </header>
 
@@ -229,11 +236,16 @@ export default function Home() {
               <span className="text-green-500">สำหรับทุกคนในทีม</span>
             </h1>
             <p className="mx-auto mt-5 max-w-md text-lead text-ink-soft md:mx-0">
-              เว็บ HR ที่พนักงานไทยและพม่าใช้เองได้ทันที ลา ดูเงินเดือน ดูกะงาน
-              ในไม่กี่คลิก ส่วน HR admin ก็จัดการงานได้ไว ไม่ต้องตอบคำถามซ้ำ ๆ
+              เว็บ HR ของเรา ที่พนักงานไทยและพม่าใช้เองได้ทันที ลา ดูเงินเดือน ดูกะงาน
+              ในไม่กี่คลิก ส่วนทีม HR admin ก็จัดการงานได้ไว ไม่ต้องตอบคำถามซ้ำ ๆ
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
-              <LineButton big />
+              <a
+                href="#how"
+                className="inline-flex items-center justify-center rounded-full bg-green-700 px-8 py-4 text-lead font-semibold text-white shadow-[0_4px_0_var(--green-900)] transition hover:-translate-y-0.5"
+              >
+                ดูวิธีใช้งาน
+              </a>
               <a
                 href="#features"
                 className="rounded-full border-2 border-green-700 px-6 py-3.5 font-semibold text-green-700 hover:bg-green-50"
@@ -289,13 +301,24 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="mt-10 rounded-3xl border-2 border-dashed border-green-200 p-6 text-center">
-            <p className="text-lead font-semibold">ราคา: ตามจำนวนพนักงานและฟังก์ชันที่เลือก</p>
-            <p className="mt-1 text-body text-green-200">ทักไลน์มาขอใบเสนอราคาได้ฟรี</p>
-            <div className="mt-5">
-              <LineButton />
+        </div>
+      </section>
+
+      {/* ===== วิธีใช้ ===== */}
+      <section id="how" className="mx-auto max-w-6xl scroll-mt-6 px-4 py-16 sm:px-6">
+        <h2 className="text-center text-title font-bold text-green-900">เริ่มใช้ง่าย ๆ 3 ขั้น</h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {steps.map((s) => (
+            <div key={s.n} className="flex items-start gap-4 rounded-3xl bg-green-50 p-6">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-700 text-xl font-bold text-white">
+                {s.n}
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-green-900">{s.title}</h3>
+                <p className="mt-1 text-body text-ink-soft">{s.text}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -320,12 +343,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== ติดต่อเรา ===== */}
+      {/* ===== สอบถาม HR ===== */}
       <section id="contact" className="scroll-mt-6 px-4 pb-20 sm:px-6">
         <div className="card-pop mx-auto max-w-3xl p-8 text-center sm:p-12">
-          <h2 className="text-title font-bold text-green-900">อยากให้ทีมใช้ HR ง่ายขึ้น?</h2>
+          <h2 className="text-title font-bold text-green-900">มีคำถาม? สอบถาม HR ได้เลย</h2>
           <p className="mx-auto mt-3 max-w-md text-body text-ink-soft">
-            ทักมาคุยกันก่อนได้ ไม่มีค่าใช้จ่าย เราพร้อมสาธิตการใช้งานให้ดู
+            เรื่องวันลา เงินเดือน กะงาน หรือเข้าระบบไม่ได้ ทักไลน์ OA ของฝ่าย HR
+            เจ้าหน้าที่ตอบทั้งภาษาไทยและภาษาพม่า
           </p>
           <div className="mt-8">
             <LineButton big />
@@ -346,7 +370,7 @@ export default function Home() {
       {/* ===== ส่วนท้าย ===== */}
       <footer className="bg-green-900 py-8 text-center text-sm text-green-200">
         <p className="font-semibold text-white">HR WTO</p>
-        <p className="mt-1">ระบบ HR ใช้ง่าย 2 ภาษา ไทย–พม่า</p>
+        <p className="mt-1">ระบบ HR ภายในองค์กร ใช้ง่าย 2 ภาษา ไทย–พม่า</p>
         <p className="mt-3">© 2026 HR WTO</p>
       </footer>
     </div>
