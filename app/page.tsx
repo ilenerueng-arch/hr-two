@@ -1,5 +1,5 @@
 // ===== ข้อมูลติดต่อ HR — แก้ตรงนี้ได้เลย =====
-const LINE_ID = "@hrwto"; // ตัวอย่าง: เปลี่ยนเป็น LINE OA ของ HR จริง
+const LINE_ID = "@980ksuoz"; // LINE OA ของ HR
 const LINE_URL = `https://line.me/R/ti/p/${LINE_ID}`;
 const OPEN_HOURS = "จันทร์–ศุกร์ 08:30–17:30 น."; // ตัวอย่าง
 
