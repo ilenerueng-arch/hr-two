@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* ===== สีและขนาดตัวอักษรของเว็บ — แก้ที่นี่ที่เดียว ===== */
+:root {
+  --green-900: #12401a; /* เขียวเข้ม ตัวหนังสือหัวข้อ */
+  --green-700: #1f6a24; /* เขียวหลัก ปุ่ม */
+  --green-500: #5aa21b; /* เขียวสด เส้นขอบ/เงา */
+  --green-200: #cfe8b8;
+  --green-50: #f1f8ea; /* พื้นหลังอ่อน */
+  --cream: #fbfaf5; /* พื้นหลังหลัก */
+  --ink: #1d2a1f; /* ตัวหนังสือ */
+  --ink-soft: #55635a; /* ตัวหนังสือรอง */
+  --sun: #f5b72e; /* สีเน้นอบอุ่น */
+  --line: #06c755; /* สีปุ่ม LINE */
+}
+
+@theme inline {
+  --color-green-900: var(--green-900);
+  --color-green-700: var(--green-700);
+  --color-green-500: var(--green-500);
+  --color-green-200: var(--green-200);
+  --color-green-50: var(--green-50);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-sun: var(--sun);
+  --color-line: var(--line);
+
+  --font-sans: var(--font-thai), var(--font-myanmar), system-ui, sans-serif;
+
+  /* ขนาดตัวอักษร */
+  --text-display: clamp(2.25rem, 7vw, 3.75rem);
+  --text-display--line-height: 1.2;
+  --text-title: clamp(1.6rem, 4.5vw, 2.4rem);
+  --text-title--line-height: 1.3;
+  --text-lead: 1.15rem;
+  --text-lead--line-height: 1.75;
+  --text-body: 1rem;
+  --text-body--line-height: 1.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* การ์ดสไตล์เงาเขียว */
+.card-pop {
+  background: #fff;
+  border: 2px solid var(--green-700);
+  border-radius: 1.5rem;
+  box-shadow: 6px 6px 0 var(--green-500);
+}
